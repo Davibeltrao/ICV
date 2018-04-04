@@ -14,6 +14,35 @@ def openImage():
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
 
+
+def getV(vec):
+	#print("VEC = ", vec)
+	vecV = []
+	for v in vec:
+		print(v)
+
+	print()
+	print()
+	print()
+	print()
+
+	vecSup = vec.copy()
+	vecSup.sort(key=lambda x:x[0])
+	#for v in vecSup:
+	#		print(v)
+	vecV = vecSup[:10]
+	#print("VEC SORTED = ", vec)
+	print("VEC V = ", vecV)
+	return vecV
+
+def getH1(vec):
+
+	return
+
+def getH2(vec):
+
+	return
+
 def f2():
 	#reading the image 
 	image = cv2.imread("C:/Users/flabe/Desktop/2018-1/ICV/TP1/dados/pattern_0001.png")
@@ -85,6 +114,7 @@ def getBlack(vec, image, closed):
 	vecH_2 = []
 	h = image.shape[0]
 	w = image.shape[1]
+	getV(vec)
 	for v in vec:
 		x,y,w,h = v
 		if(x < 300):
@@ -122,7 +152,7 @@ def getBlack(vec, image, closed):
 		#cv2.waitKey(0)  
 		#print(closed)
 		#print("BOXES  = ", boxes)			
-		soma = getResp(closed, boxes, ex_number, image)
+		#soma = getResp(closed, boxes, ex_number, image)
 		print(ex_number, ":", end="")
 		if(soma == "BRANCO"):
 			print("Branco")
@@ -155,7 +185,7 @@ def getBlack(vec, image, closed):
 		#cv2.waitKey(0)  
 		#print(closed)
 		#print("BOXES  = ", boxes)			
-		soma = getResp(closed, boxes, ex_number, image)
+		#soma = getResp(closed, boxes, ex_number, image)
 		print(ex_number, ":", end="")
 		if(soma == "BRANCO"):
 			print("Branco")
